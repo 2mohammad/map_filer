@@ -52,10 +52,9 @@ function removeUser(array, searchValue){
             return element;
         }
     });
-    const arrays = (array.slice(0, indexFinder).concat(array.slice(indexFinder+1, array.length)));
-    array = arrays;
-    const element = array[indexFinder];
     if (indexFinder !== -1){
+        array.splice(indexFinder, 1);
+        const element = array[indexFinder];
         return { element, indexFinder, array };
     }
     else {
@@ -63,6 +62,14 @@ function removeUser(array, searchValue){
     }
 
 }
+// function removeUser(usersArray, username) {
+// let foundIndex = usersArray.findIndex(function(user){
+//     return user.username === username;
+//   })
+//   if(foundIndex === -1) return;
+
+//   return usersArray.splice(foundIndex,1)[0];
+// }
 
 console.log(removeUser(users, 'mlewis'));
 console.log(removeUser(users, 'mlewis'));
