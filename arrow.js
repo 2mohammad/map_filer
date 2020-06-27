@@ -14,4 +14,4 @@ const squareAndFindEvens = ((numbers) => {
     return evens;
 });
 
-console.log(squareAndFindEvens([1,2,3,4]));
+console.log(squareAndFindEvens([11,2,3]))
