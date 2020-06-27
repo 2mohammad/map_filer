@@ -84,12 +84,11 @@ const extend = (array1, array2) => {
 
 console.log(extend([1,2,3],[1,2,3]));
 
-console.log("updted");
+console.log("updated");
 
 const removeKey = (obj, key) => {
-    let newObj = {...obj}
-    delete newObj[key]
-    return newObj;
+    delete obj[key];
+    return obj;
 }
 
 console.log(removeKey({'a':1, 'b':2, 'c':2, 'd':4}, 'b'));
@@ -112,3 +111,42 @@ const update = (obj, key, val)=> {
 }
 
 console.log(update({'q':2, 'a': 23}, 'q', 28));
+
+
+function createInstructor(firstName, lastNAme){
+    return {
+        firstName,
+        lastNAme
+    };
+}
+
+console.log(createInstructor("bob", "lenny"));
+
+const instructor = {
+    firstName: "Colt",
+    sayHi: function(){
+        return "Hi";
+    },
+    sayBye: function(names){
+        return  names + " says bye!";
+    }
+}; 
+
+console.log(instructor.sayBye(instructor.firstName));
+
+function createAnimal(name, verb, noise){
+    return {
+        spieces: name,
+        [verb]: function(){
+            return noise;
+        }
+
+    }
+}
+
+const s = createAnimal("sheep", "bleet", "BAAAAaaaa")
+console.log(s.bleet());
+const d = createAnimal("dog", "bark", "Woooof!")
+console.log(d.bark());
+
+
