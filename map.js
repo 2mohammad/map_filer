@@ -75,3 +75,22 @@ const vowelCounts = (string) => {
     };
 
 
+const reducer = (array) => {
+    const count = new Map();
+    const values = new Set(array);
+    values.forEach((element)=> {
+        count.set(element, array.filter((arrayElement) => arrayElement === element).length);
+    });
+    return count;
+}
+console.log(reducer([1, 2, 3, 5, 2, 8, 9, 2]));
+
+// Map(6) {1 => 1, 2 => 3, 3 => 1, 5 => 1, 8 => 1, …}
+
+const reduced = (array, val) => {
+    return array.filter((element) => element === val).length;
+}
+
+console.log(reduced([1, 2, 3, 5, 2, 8, 9, 2, 8, 8, 8], 8));
+
+// 3
